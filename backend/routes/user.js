@@ -95,7 +95,7 @@ userRouter.post("/signup" ,async(req,res)=>{
 })
 
 
-userRouter.post("/signin",middleware,async (req,res)=>{
+userRouter.post("/signin",async (req,res)=>{
     // below can be better by using zod same as above 
     // but continue for now 
     const email=req.body.email;
@@ -142,7 +142,7 @@ userRouter.put("/update",middleware,async(req,res)=>{
 })
 
 userRouter.get("/bulk",async(req,res)=>{
-    const toFind = req.body.filter;
+    const toFind = req.query.filter;
     const foundUser = await User.find({$or:[{firstName:toFind},{lastName:toFind}]})
 
     // res.status(200).json({
