@@ -1,10 +1,8 @@
 import {Link} from "react-router-dom";
-export default function Submit({label , to}){
+export default function Submit({onClick,label , to}){
     return <>
     <div className="mt-3 mb-3 rounded-xl flex justify-center w-full bg-blue-900	  ">
-        <Link  to={to}>
-        {<button className="font-mono text-white font-bold text-xl p-2 ">{label}</button>}
-        </Link>
+        {<button onClick={onClick} className="font-mono text-white font-bold text-xl p-2 ">{label}</button>}
     </div>
     </>
 }
